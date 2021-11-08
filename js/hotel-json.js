@@ -20,22 +20,11 @@ console.log(testJson);
 // enter data in
 $("input[type='button']").click(function(e) {
   //get the value of form
-  var inputdata = $("form").serializeArray();
-  console.log(inputdata);
-  var inputJson = {};
-  for (var i = 0; i < inputdata.length; i++) {
-    var name = inputdata[i]["name"];
-    var value = inputdata[i]["value"];
-    //console.log(name + " " + value);
-    inputJson[name] = value;
-  }
-
-  console.log(inputJson);
+  
+  
   /* save the data to database */
-  firebase
-    .firestore()
-    .collection("hoteldata") // use different name
-    .add(inputJson);
+
+
 
   /* clear the entry */
   $("form")[0].reset();
