@@ -17,7 +17,7 @@ $('#Login').submit(function (e) {
   // get the user name and password from form
   // You need to change this.
   var email = 'yilianz4@gmail.com';
-  var password = 'ddsgagafda111';
+  var password = 'ddsgagafda';
 
   firebase
     .auth()
@@ -36,18 +36,8 @@ $('#Login').submit(function (e) {
         emailVerified = user.emailVerified;
         console.log(name + email + emailVerified);
       }
-      window.location.href = 'game.html';
     })
     .catch((error) => {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          // Sign-out successful.
-        })
-        .catch((error) => {
-          // An error happened.
-        });
 
       var errorCode = error.code;
       var errorMessage = error.message;
