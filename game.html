@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!-- Jquery library   ---->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="message">
+      <h1>Game Page</h1>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+    <!--  Save and display data on real time  -->
+
+    <script>
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAzcwgZuLA7dO9g4sQhXQVTUgCo0M8m2qM',
+        authDomain: 'grocerylist-91956.firebaseapp.com',
+        databaseURL: 'https://grocerylist-91956.firebaseio.com',
+        projectId: 'grocerylist-91956',
+        storageBucket: 'grocerylist-91956.appspot.com',
+        messagingSenderId: '813812426276',
+        appId: '1:813812426276:web:93e5897af12892ff78dab1',
+        measurementId: 'G-VZ83BTR72T',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          alert('you are allowed!!');
+        } else {
+          alert('You are not allowed');
+        }
+      });
+    </script>
+  </body>
+</html>
