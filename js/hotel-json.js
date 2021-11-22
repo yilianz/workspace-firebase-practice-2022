@@ -37,6 +37,19 @@ $("input[type='button']").click(function (e) {
   $('form')[0].reset();
 });
 
+$('#signout').click(function () {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      // Sign-out successful.
+      window.location.href = 'index.html';
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+});
+
 /* array example
 const array1 = ['a', 'b', 'c'];
 array1.forEach(element => console.log(element));
