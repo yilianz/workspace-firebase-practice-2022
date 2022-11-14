@@ -1,3 +1,5 @@
+/* Change the configuration */
+
 var firebaseConfig = {
   apiKey: 'AIzaSyAzcwgZuLA7dO9g4sQhXQVTUgCo0M8m2qM',
   authDomain: 'grocerylist-91956.firebaseapp.com',
@@ -10,22 +12,6 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-/* object examples 
-var testJson = {};
-testJson["lastname"] = "zhang";
-testJson["location"] = "aiken";
-console.log(testJson);
-*/
-console.log('here');
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    console.log(user.email);
-    // ...
-  } else {
-    // User is signed out
-    console.log('no user');
-  }
-});
 
 // enter data in
 $("input[type='button']").click(function (e) {
@@ -37,18 +23,6 @@ $("input[type='button']").click(function (e) {
   $('form')[0].reset();
 });
 
-$('#signout').click(function () {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      // Sign-out successful.
-      window.location.href = 'index.html';
-    })
-    .catch((error) => {
-      // An error happened.
-    });
-});
 
 /* array example
 const array1 = ['a', 'b', 'c'];
@@ -56,6 +30,7 @@ array1.forEach(element => console.log(element));
 */
 
 /* read the data from the database */
+
 /*
 firebase
   .firestore()
