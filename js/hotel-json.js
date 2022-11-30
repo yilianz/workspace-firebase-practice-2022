@@ -23,7 +23,6 @@ $("input[type='button']").click(function (e) {
   $('form')[0].reset();
 });
 
-
 /* array example
 const array1 = ['a', 'b', 'c'];
 array1.forEach(element => console.log(element));
@@ -33,7 +32,9 @@ array1.forEach(element => console.log(element));
 
 firebase
   .firestore()
-  .collection('hoteldata').orderBy('num','desc').limit(3)
+  .collection('hoteldata')
+  .orderBy('num', 'desc')
+  .limit(4)
   .onSnapshot((querySnapshot) => {
     //console.log(querySnapshot.size);
     querySnapshot.forEach((doc) => {
@@ -42,6 +43,3 @@ firebase
       console.log(doc.data().name);
     });
   });
-
-
-
