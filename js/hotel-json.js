@@ -33,7 +33,7 @@ array1.forEach(element => console.log(element));
 
 firebase
   .firestore()
-  .collection('hoteldata').orderBy('num').limit(3)
+  .collection('hoteldata').orderBy('num','desc').limit(3)
   .onSnapshot((querySnapshot) => {
     //console.log(querySnapshot.size);
     querySnapshot.forEach((doc) => {
