@@ -29,18 +29,19 @@ const array1 = ['a', 'b', 'c'];
 array1.forEach(element => console.log(element));
 */
 
-/* read the data from the database */
+/* read the data from the database and sort the data*/
 
-/*
 firebase
   .firestore()
-  .collection('hoteldata')
+  .collection('hoteldata').orderBy('num').limit(3)
   .onSnapshot((querySnapshot) => {
-    console.log(querySnapshot.size);
+    //console.log(querySnapshot.size);
     querySnapshot.forEach((doc) => {
-      console.log(doc.data());
-      console.log(doc.data().room);
-      console.log(doc.data().checkout);
+      //console.log(doc.data());
+      console.log(doc.data().num);
+      console.log(doc.data().name);
     });
   });
-*/
+
+
+
